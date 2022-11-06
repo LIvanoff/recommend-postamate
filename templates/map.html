@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/normalize.css">
+    <link rel="stylesheet" href="../static/map.css">
+    <link rel="icon" type='image/x-icon' href="../static/favicon.ico"/>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Интерактивная карта постаматов</title>
+</head>
+
+<body>
+<div class="wraper">
+    <div id="menu" class="menu-wraper">
+        <h1>
+            Где планируете
+            разместить?
+        </h1>
+        <div class="radius" style="width:100%">
+            <h2>Количество постаматов</h2>
+            <div class="row" style="width: 100%; margin-top:10px">
+                <input id="amount_s" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="textfield" placeholder="Введите число"/>
+            </div>
+        </div>
+        <div class="rating" style="width:100%;">
+            <h2>Рейтинги мест по близости</h2>
+            <div class="row" style="width: 100%; margin-top: 10px; justify-content: space-between;">
+                <div class="input_value"
+                     style="padding: 7px; background: #ffffff; border-radius: 10px; width: fit-content; border-radius: 10px; opacity: 0.8; display: flex; align-items: center; margin-right: 8px; margin-top: 10px;">
+                    <img src="../static/Kiosk.png" alt="Киоски">
+                    <label for="Киоски">Киоски</label>
+                    <input id="kiosk_r" placeholder="10" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="Киоски" maxlength="2"/>
+                </div>
+                <div class="input_value"
+                     style="padding: 7px; background: #ffffff; border-radius: 10px; width: fit-content; border-radius: 10px; opacity: 0.8; display: flex; align-items: center; margin-top: 10px;">
+                    <img src="../static/mfc.png" alt="Киоски">
+                    <label for="МФЦ">МФЦ</label>
+                    <input id="mfc_r" placeholder="8" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="login" maxlength="2"/>
+                </div>
+            </div>
+            <div class="input_value"
+                 style="padding: 7px;background: #ffffff;justify-content: space-between;border-radius: 10px;width: 100%;border-radius: 10px;opacity: 0.8;display: flex;align-items: center;margin-top: 10px;">
+                <div style="display:flex;width: fit-content;/* flex-direction: row; */margin: 0;background-color: transparent;/* flex-wrap: nowrap; */padding: 0;align-items: center;">
+                    <img src="../static/postamat.png" alt="Киоски">
+                    <label for="МФЦ">Существующие постаматы</label>
+                </div>
+                <input id="postmat_r" placeholder="7" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="login" maxlength="2"/>
+            </div>
+            <div class="input_value"
+                 style="padding: 7px;background: #ffffff;justify-content: space-between;border-radius: 10px;width: 100%;border-radius: 10px;opacity: 0.8;display: flex;align-items: center;margin-top: 10px;">
+                <div style="display:flex;width: fit-content;/* flex-direction: row; */margin: 0;background-color: transparent;/* flex-wrap: nowrap; */padding: 0;align-items: center;">
+                    <img src="../static/sport.png" alt="Киоски">
+                    <label for="МФЦ">Спортивные объекты</label>
+                </div>
+                <input id="sport_r" placeholder="6" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="login" maxlength="2"/>
+            </div>
+        </div>
+        <div class="close_place">
+            <h2>Рейтинг жилых домов</h2>
+            <div class="input_value"
+                 style="padding: 7px;background: #ffffff;justify-content: space-between;border-radius: 10px;width: 100%;border-radius: 10px;opacity: 0.8;display: flex;align-items: center;margin-top: 10px;">
+                <div style="display:flex;width: fit-content;/* flex-direction: row; */margin: 0;background-color: transparent;/* flex-wrap: nowrap; */padding: 0;align-items: center;">
+                    <label for="МФЦ">x > 200 квартир</label>
+                </div>
+                <input id="1apart_r" placeholder="5" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="login" maxlength="2"/>
+            </div>
+            <div class="input_value"
+                 style="padding: 7px;background: #ffffff;justify-content: space-between;border-radius: 10px;width: 100%;border-radius: 10px;opacity: 0.8;display: flex;align-items: center;margin-top: 10px;">
+                <div style="display:flex;width: fit-content;/* flex-direction: row; */margin: 0;background-color: transparent;/* flex-wrap: nowrap; */padding: 0;align-items: center;">
+                    <label for="МФЦ">161 < x < 200 квартир</label>
+                </div>
+                <input id="2apart_r" placeholder="4" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="login" maxlength="2"/>
+            </div>
+            <div class="input_value"
+                 style="padding: 7px;background: #ffffff;justify-content: space-between;border-radius: 10px;width: 100%;border-radius: 10px;opacity: 0.8;display: flex;align-items: center;margin-top: 10px;">
+                <div style="display:flex;width: fit-content;/* flex-direction: row; */margin: 0;background-color: transparent;/* flex-wrap: nowrap; */padding: 0;align-items: center;">
+                    <label for="МФЦ">81 < x < 160 квартир</label>
+                </div>
+                <input id="3apart_r" placeholder="3" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="login" maxlength="2"/>
+            </div>
+            <div class="input_value"
+                 style="padding: 7px;background: #ffffff;justify-content: space-between;border-radius: 10px;width: 100%;border-radius: 10px;opacity: 0.8;display: flex;align-items: center;margin-top: 10px;">
+                <div style="display:flex;width: fit-content;/* flex-direction: row; */margin: 0;background-color: transparent;/* flex-wrap: nowrap; */padding: 0;align-items: center;">
+                    <label for="МФЦ">41 < x < 80 квартир</label>
+                </div>
+                <input id="4apart_r" placeholder="2" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="login" maxlength="2"/>
+            </div>
+            <div class="input_value"
+                 style="padding: 7px;background: #ffffff;justify-content: space-between;border-radius: 10px;width: 100%;border-radius: 10px;opacity: 0.8;display: flex;align-items: center;margin-top: 10px;">
+                <div style="display:flex;width: fit-content;/* flex-direction: row; */margin: 0;background-color: transparent;/* flex-wrap: nowrap; */padding: 0;align-items: center;">
+                    <label for="МФЦ">x < 40 квартир</label>
+                </div>
+                <input id="5apart_r" placeholder="1" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" class="input_1" type="text" name="login" maxlength="2"/>
+            </div>
+        </div>
+
+
+        <div style="display: flex;width: 100%; height:80px;margin-top: 30px;align-items: center;align-content: center;justify-content: space-around; margin-bottom: 37px;">
+            <button class="calculate" onclick="canculate()" id="export">Рассчитать</button>
+        </div>
+    </div>
+    <div>
+        <iframe class="index_map" , src="../static/index_map.html" frameBorder="0" id="iframe"></iframe>
+    </div>
+</div>
+<div id="load" style="display:none; flex-direction: column; align-items: center;" class="loading">
+    <img src="../static/XVo6.gif" alt="">
+    <h2>Пожалуйста подождите</h2>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function canculate() {
+        res = document.getElementById('iframe').contentWindow.getData();
+        const data = {
+            amount_s: document.getElementById('amount_s').value,
+            kiosk_r: document.getElementById('kiosk_r').value,
+            mfc_r: document.getElementById('mfc_r').value,
+            postmat_r: document.getElementById('postmat_r').value,
+            sport_r: document.getElementById('sport_r').value,
+            apart1_r: document.getElementById('1apart_r').value,
+            apart2_r: document.getElementById('2apart_r').value,
+            apart3_r: document.getElementById('3apart_r').value,
+            apart4_r: document.getElementById('4apart_r').value,
+            apart5_r: document.getElementById('5apart_r').value,
+            geojson: res
+        };
+
+
+        $.ajax({
+            url: '/postmethod',
+            type: 'POST',
+            data: data,
+            async: true,
+            beforeSend: function () {
+                console.log("before sending")
+                document.getElementById('load').style.setProperty("display", "flex");
+                console.log("before sending")
+            },
+            success: function (response) {
+                console.log("success")
+                document.getElementById('load').style.setProperty("display", "none");
+                console.log(response)
+                window.location.href = '/result?id='+response;
+            },
+            error: function (response) {
+                console.log("error")
+                document.getElementById('load').style.setProperty("display", "none");
+                console.log(response)
+            }
+        });
+    }
+</script>
+
+
+</html>

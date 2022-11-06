@@ -1,0 +1,217 @@
+.wraper {
+    color: aliceblue;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wraper div:nth-child(1) {
+    padding-left: 45px;
+    padding-right: 45px;
+    flex: none;
+    width: 27%;
+    background: #ffffff;
+    overflow: auto;
+}
+
+.wraper div:nth-child(2) {
+    width: 73%;
+}
+
+ a {
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+   }
+
+.menu-wraper {
+    display: flex;
+    flex-direction: column;
+}
+
+H1 {
+    margin-top: 32px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 45px;
+    color: #272E38;
+}
+
+h2 {
+    margin-top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.index_map {
+
+    height: 100%;
+    width: 100%;
+}
+
+.region {
+    margin-top: 25px;
+    background-color: transparent;
+}
+
+label {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(39, 46, 56, 0.9);
+}
+
+.checkbox_m {
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+    margin-right: 7px;
+}
+
+.textfield {
+    padding-left: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.7);
+    border: 0;
+    width: 100%;
+    height: 40px;
+    background: #EBF1FF;
+    border-radius: 10px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_1 {
+    width: 35px;
+    height: 35px;
+    background: #EBF1FF;
+    border: 0px solid #272E38;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #272E38;
+    text-align: center;
+}
+
+.calculate-full {
+    width: 100%;
+    height: 80px;
+    border-width: 0;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    background: rgba(53, 50, 124, 0.3);
+    color: #FFFFFF;
+}
+
+.calculate-full:hover {
+
+    cursor: pointer;
+    width: 100%;
+    height: 80px;
+    background: rgba(53, 50, 124, 0.9);
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+    border-width: 0;
+}
+
+.calculate {
+    width: 316px;
+    height: 80px;
+    border-width: 0;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    background: rgba(53, 50, 124, 0.3);
+    color: #FFFFFF;
+}
+
+.calculate:hover {
+
+    cursor: pointer;
+    width: 316px;
+    height: 80px;
+    background: rgba(53, 50, 124, 0.9);
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #FFFFFF;
+    border-width: 0;
+}
+
+::-webkit-scrollbar {
+    height: 4px; /* height of horizontal scrollbar ← You're missing this */
+    width: 4px; /* width of vertical scrollbar */
+    border: 0px solid #d5d5d5;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #272E38;
+    border-radius: 0px;
+}
+
+.loading {
+    width: 360px;
+    height: 440px;
+    background-color: #EBF1FF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+    margin: auto;
+}
+
+h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+}
+
+.file-btn{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}

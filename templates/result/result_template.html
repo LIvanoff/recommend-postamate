@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/normalize.css">
+    <link rel="stylesheet" href="../static/map.css">
+    <link rel="icon" type='image/x-icon' href="../static/favicon.ico"/>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Результат | Интерактивная карта постоматов </title>
+</head>
+<body>"<br>
+<div class="wraper">
+    <div id="menu" class="menu-wraper">
+        <h1 style="font-size: 40px">Наши предложения по данным параметрам</h1>
+        <h2 style="color: #4B586B; margin-top: 15px">Всего replace_1 вариантов</h2>
+        <h3 style="margin-top: 25px">Выберите подходящий формат сохранения результата</h3>
+        <div style="display:flex; justify-content: space-evenly; margin-top: 45px">
+
+            <a class="file-btn" href="replace_3" onclick="pdf()">
+                <div style="display: flex;padding: 0;width: 100%;flex-direction: column;align-items: center;justify-content: center;">
+                    <img src="../static/File.png" height="80"/>
+                    <h2 style="margin-top: 5px">PDF</h2>
+                </div>
+            </a>
+
+            <a class="file-btn"  href="replace_4" onclick="exel()">
+                <div style="display: flex;padding: 0;width: 100%;flex-direction: column;align-items: center;justify-content: center;">
+                    <img src="../static/File.png" height="80"/>
+                    <h2 style="margin-top: 5px">EXCEL</h2>
+                </div>
+            </a>
+        </div>
+        <h3 style="margin-top: 30px">
+            Хотите изменить параметры поиска?
+        </h3>
+        <button style="margin-top: 30px" class="calculate-full" onclick="home()" id="export">Вернуться к расчету
+        </button>
+    </div>
+    <div>
+        <iframe class="index_map" , src="replace_2" frameBorder="0" id="iframe"></iframe>
+    </div>
+</div>
+</body>
+
+<script>
+    function home() {
+        window.location.href = '/';
+    }
+</script>
+
+</html>
