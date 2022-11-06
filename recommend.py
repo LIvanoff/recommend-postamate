@@ -19,7 +19,7 @@ def recommend(geojsonstr, relevant_dict = {'Жилой дом 40-80': 2,
                                     'МФЦ': 8},
                                     clusters=None):
   
-  df = pd.read_excel('dataset_v3.xlsx')
+  df = pd.read_excel('dataset_v4.xlsx')
 
   study_area = json.loads(geojsonstr)
   
@@ -43,7 +43,7 @@ def recommend(geojsonstr, relevant_dict = {'Жилой дом 40-80': 2,
         latlong.append([longitude[i],latitude[i]])
         index_list.append(i)
         if df.loc[i,'type'] == 'Жилой дом':
-          sum_residents += residents[i]
+          sum_residents += int(residents[i])
 
 
 
@@ -80,15 +80,15 @@ def recommend(geojsonstr, relevant_dict = {'Жилой дом 40-80': 2,
 
   for i in index_list:
     if df.loc[i,'type'] == 'Жилой дом':
-      if 40 < df.loc[i,'apartment'] <= 80:
+      if 40 < int(df.loc[i,'apartment']) <= 80:
         weights = np.append(weights,relevant_dict['Жилой дом 40-80'])
-      elif 80 < df.loc[i,'apartment'] <= 160:
+      elif 80 < int(df.loc[i,'apartment']) <= 160:
         weights = np.append(weights,relevant_dict['Жилой дом 80-160'])
-      elif df.loc[i,'apartment'] <= 40:
+      elif int(df.loc[i,'apartment']) <= 40:
         weights = np.append(weights,relevant_dict['Жилой дом 40'])
-      elif 160 < df.loc[i,'apartment'] <= 200:
+      elif 160 < int(df.loc[i,'apartment']) <= 200:
         weights = np.append(weights,relevant_dict['Жилой дом 160-200'])
-      if 200 < df.loc[i,'apartment']:
+      if 200 < int(df.loc[i,'apartment']):
         weights = np.append(weights,relevant_dict['Жилой дом 200'])
     elif df.loc[i, 'type'] == 'Постамат':
       weights = np.append(weights,relevant_dict['Постамат'])
