@@ -20,11 +20,11 @@ def folium_update(polygon_locations, points:list) -> list:
 
         point_loc = points[object_id][object_id][-1]
         pop = "Рейтинг: " + str(points[object_id][object_id][4]) + "<br>"  + "ID:" + str(object_id) + "<br>" + points[object_id][object_id][0] + "<br>" + points[object_id][object_id][2]
-        postamat_icon = folium.CustomIcon("postamat.png", icon_size=[36,43])
+        postamat_icon = folium.CustomIcon("assets/postamat.png", icon_size=[36,43])
         
         folium.Marker(location=point_loc, icon=postamat_icon, popup=pop).add_to(m)
 
-    with open("identifier.pickle", "rb") as s_identifier:
+    with open("pickles/identifier.pickle", "rb") as s_identifier:
         identifier = pickle.load(s_identifier)    
 
     identifier += 1

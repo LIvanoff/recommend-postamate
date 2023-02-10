@@ -19,7 +19,7 @@ def recommend(geojsonstr, relevant_dict = {'Жилой дом 40-80': 2,
                                     'МФЦ': 8},
                                     clusters=None):
   
-  df = pd.read_excel('dataset_v4.xlsx')
+  df = pd.read_excel('datasets/dataset_v4.xlsx')
 
   study_area = json.loads(geojsonstr)
   
@@ -52,7 +52,7 @@ def recommend(geojsonstr, relevant_dict = {'Жилой дом 40-80': 2,
   
   ################# ЗДЕСЬ БУДЕТ ФУНКЦИЯ МОДЕЛИ ДЛЯ ПРЕЗДСКАЗАНИЯ ############### 
 
-  with open('model_v2.pkl', 'rb') as f:
+  with open('models/model_v2.pkl', 'rb') as f:
       ridge = pickle.load(f)
       
   if clusters == None:
